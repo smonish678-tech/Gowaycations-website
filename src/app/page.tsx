@@ -22,7 +22,7 @@ function Logo() {
       <img
         src="/media/Logo changed.png"
         alt="Gowaycations"
-        className="h-5 w-auto object-contain md:h-10"
+        className="h-40 w-auto object-contain md:h-50"
       />
     </a>
   );
