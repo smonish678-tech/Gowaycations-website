@@ -20,7 +20,7 @@ function Logo() {
   return (
     <a href="#home" aria-label="Gowaycations home" className="flex items-center">
       <img
-        src="/media/gowaycations-logo.jpeg"
+        src="/media/Logo changed.png"
         alt="Gowaycations"
         className="h-16 w-auto object-contain md:h-20"
       />
