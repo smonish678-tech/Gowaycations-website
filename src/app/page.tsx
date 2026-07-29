@@ -22,7 +22,7 @@ function Logo() {
       <img
         src="/media/Logo changed.png"
         alt="Gowaycations"
-        className="h-16 w-auto object-contain md:h-20"
+        className="h-5 w-auto object-contain md:h-10"
       />
     </a>
   );
@@ -67,6 +67,6 @@ const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
 
     <section id="contact" className="relative min-h-[620px] overflow-hidden bg-[#10140d] text-white"><video autoPlay muted loop playsInline preload="none" className="absolute inset-0 h-full w-full object-cover opacity-50"><source src="/media/goway-hero.mp4" type="video/mp4" /></video><div className="absolute inset-0 bg-gradient-to-r from-[#11170f]/95 via-[#11170f]/60 to-[#11170f]/30" /><div className="section-shell relative flex min-h-[620px] items-center py-24"><Reveal><p className="eyebrow text-orange">Your story starts here</p><h2 className="mt-6 max-w-4xl text-5xl font-medium leading-[.92] tracking-[-.075em] md:text-8xl">The world is waiting.<br /><em className="font-light">Where will your story begin?</em></h2><p className="mt-7 max-w-xl text-sm leading-7 text-white/70">Tell us your idea, your comfort level and the way you want to travel. We will take it from there.</p><div className="mt-9"><Button onClick={() => undefined}>Let&apos;s plan your journey</Button></div></Reveal></div></section>
 
-    <footer className="bg-forest px-[5vw] py-14 text-white"><div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.5fr_1fr_1fr]"><div><Logo /><p className="mt-5 max-w-sm text-xs leading-6 text-white/65">Personalised travel, planned with care from Bengaluru to the world.</p></div><div><p className="eyebrow text-orange">Explore</p><p className="mt-5 text-xs leading-7 text-white/65">Destinations<br />Travel styles<br />How we customise</p></div><div><p className="eyebrow text-orange">Find us</p><p className="mt-5 text-xs leading-7 text-white/65">1599, 25th B Main Road,<br />BDA Layout, HSR Layout,<br />Bengaluru · 560102<br /><br />Instagram · WhatsApp · Email</p></div></div><div className="mx-auto mt-12 max-w-[1400px] border-t border-white/15 pt-5 text-[10px] tracking-wide text-white/45">© 2026 Gowaycations. Travel the way you choose.</div></footer>
+    <footer className="bg-forest px-[5vw] py-14 text-white"><div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.5fr_1fr_1fr]"><div><Logo /><p className="mt-5 max-w-sm text-xs leading-6 text-white/65">Personalised travel, planned with care from Bengaluru to the world.</p></div><div><p className="eyebrow text-orange">Explore</p><p className="mt-5 text-xs leading-7 text-white/65">Destinations<br />Travel styles<br />How we customise</p></div><div><p className="eyebrow text-orange">Find us</p><p className="mt-5 text-xs leading-7 text-white/65">25th B Main Road,<br />BDA Layout, HSR Layout,<br />Bengaluru · 560102<br /><br />Instagram · 9645039364 · info@gowaycations.com</p></div></div><div className="mx-auto mt-12 max-w-[1400px] border-t border-white/15 pt-5 text-[10px] tracking-wide text-white/45">© 2026 Gowaycations. Travel the way you choose.</div></footer>
   </main>;
 }
