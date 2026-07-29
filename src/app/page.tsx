@@ -22,7 +22,7 @@ function Logo() {
       <img
         src="/media/Logo changed.png"
         alt="Gowaycations"
-        className="h-40 w-auto object-contain md:h-50"
+        className="h-16 w-auto object-contain md:h-20"
       />
     </a>
   );
@@ -37,17 +37,38 @@ const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
   const nav = [["Home", "home", "⌂"], ["Destinations", "destinations", "◈"], ["Travel Styles", "styles", "✦"], ["About", "about", "○"], ["Contact", "contact", "↗"]].map(([label, id, icon]) => ({ id, label, onClick: scrollTo(id), icon: <span>{icon}</span> }));
   return <main className="overflow-hidden">
 <header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-[1500px] items-center justify-between px-4 pt-4 md:px-10 md:pt-5">
-<div className="flex w-full items-center justify-between rounded-full border border-white/20 bg-black/20 px-4 py-2.5 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,.18)] md:px-6">        <LimelightNav items={nav} className="hidden lg:inline-flex" />
-        <button onClick={scrollTo("contact")} className="rounded-full bg-orange px-5 py-3 text-[10px] font-extrabold uppercase tracking-[.15em] text-ink shadow-[0_8px_24px_rgba(255,148,28,.25)] transition hover:scale-105">◉&nbsp; WhatsApp us</button>
-      </div>
-    </header>
+<div className="flex w-full items-center rounded-full border border-white/20 bg-black/20 px-4 py-2.5 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,.18)] md:px-6">
+
+  <Logo />
+
+  <div className="flex-1 flex justify-center">
+      <LimelightNav
+          items={nav}
+          className="hidden lg:inline-flex"
+      />
+  </div>
+
+  <button
+      onClick={scrollTo("contact")}
+      className="rounded-full bg-orange px-5 py-3 text-[10px] font-extrabold uppercase tracking-[.15em] text-ink shadow-[0_8px_24px_rgba(255,148,28,.25)] transition hover:scale-105"
+  >
+      ◉ WhatsApp us
+  </button>
+
+</div>
 
     <section id="home" className="relative min-h-[1060px] bg-[#111] text-white md:min-h-[1150px]">
       <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover"><source src="/media/goway-hero.mp4" type="video/mp4" /></video>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,8,.75)_0%,rgba(10,12,8,.16)_38%,#111_91%)]" />
       <div className="absolute left-[10%] top-[28%] h-72 w-72 rounded-full bg-orange/15 blur-[120px]" />
       <motion.div style={{ y: heroTextY }} className="relative z-10 pt-36 md:pt-40">
-        <ContainerScroll titleComponent={<div className="px-4"><motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="eyebrow mb-5 text-orange">Gowaycations</motion.p><motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: .28, ease: [0.16, 1, .3, 1] }} className="mx-auto max-w-6xl text-[clamp(3.5rem,8vw,8.4rem)] font-medium leading-[.86] tracking-[-.085em]">Travel the way<br /><em className="font-light">you choose.</em></motion.h1><motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .75 }} className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-white/80 md:text-base">Every journey is different. That&apos;s why every itinerary we create is tailored to your comfort, travel style and budget.</motion.p><motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .95 }} className="mt-8 flex flex-wrap justify-center gap-3"><Button onClick={scrollTo("contact")}>Plan my trip</Button><Button outline onClick={scrollTo("destinations")}>Explore destinations</Button></motion.div></div>}>
+        <ContainerScroll titleComponent={<div className="px-4"><motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="eyebrow mb-5 text-orange">Gowaycations</motion.p><motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: .28, ease: [0.16, 1, .3, 1] }} className="mx-auto max-w-6xl text-[clamp(3.5rem,8vw,8.4rem)] font-medium leading-[.86] tracking-[-.085em]">Travel the way<br /><em className="font-light">you choose.</em></motion.h1><motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .75 }} className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-white/80 md:text-base">Every journey is different. That&apos;s why every itinerary we create is tailored to your comfort, travel style and budget.</motion.p><motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .95 }} className="mt-8 flex flex-wrap justify-center gap-3"><button
+  onClick={() =>
+    window.open(
+      "https://wa.me/919645039364?text=Hi%20Gowaycations,%20I%20would%20like%20to%20plan%20a%20trip.",
+      "_blank"
+    )
+  }>Plan my trip</Button><Button outline onClick={scrollTo("destinations")}>Explore destinations</Button></motion.div></div>}>
           <div className="relative h-full overflow-hidden bg-black"><video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover"><source src="/media/goway-hero.mp4" type="video/mp4" /></video><div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-black/15" /><div className="relative flex h-full flex-col justify-between p-5 text-white md:p-8"><div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[.2em]"><span>Your journey begins here<span className="text-orange">•</span></span><span>01 / 01</span></div><div className="flex items-end justify-between"><div><p className="eyebrow text-orange">Explore the world</p><div className="mt-3 h-px w-40 bg-white/60" /></div><div className="hidden text-center md:block"><span className="mx-auto block h-10 w-6 rounded-full border border-white/70 p-1"><i className="block h-2 w-1 rounded-full bg-white" /></span><p className="mt-3 text-[9px] font-semibold uppercase tracking-[.2em] text-white/70">Scroll to discover</p></div><span className="text-xl">⌁</span></div></div></div>
         </ContainerScroll>
       </motion.div>
