@@ -61,7 +61,7 @@ const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
   </button>
 
 </div>
-
+</header>
     <section id="home" className="relative min-h-[1060px] bg-[#111] text-white md:min-h-[1150px]">
       <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover"><source src="/media/goway-hero.mp4" type="video/mp4" /></video>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,8,.75)_0%,rgba(10,12,8,.16)_38%,#111_91%)]" />
