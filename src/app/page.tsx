@@ -49,7 +49,12 @@ const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
   </div>
 
   <button
-      onClick={scrollTo("contact")}
+      onClick={() =>
+  window.open(
+    "https://wa.me/919645039364?text=Hi%20Gowaycations,%20I%20would%20like%20to%20plan%20a%20trip.",
+    "_blank"
+  )
+}
       className="rounded-full bg-orange px-5 py-3 text-[10px] font-extrabold uppercase tracking-[.15em] text-ink shadow-[0_8px_24px_rgba(255,148,28,.25)] transition hover:scale-105"
   >
       ◉ WhatsApp us
@@ -62,13 +67,23 @@ const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,8,.75)_0%,rgba(10,12,8,.16)_38%,#111_91%)]" />
       <div className="absolute left-[10%] top-[28%] h-72 w-72 rounded-full bg-orange/15 blur-[120px]" />
       <motion.div style={{ y: heroTextY }} className="relative z-10 pt-36 md:pt-40">
-        <ContainerScroll titleComponent={<div className="px-4"><motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="eyebrow mb-5 text-orange">Gowaycations</motion.p><motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: .28, ease: [0.16, 1, .3, 1] }} className="mx-auto max-w-6xl text-[clamp(3.5rem,8vw,8.4rem)] font-medium leading-[.86] tracking-[-.085em]">Travel the way<br /><em className="font-light">you choose.</em></motion.h1><motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .75 }} className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-white/80 md:text-base">Every journey is different. That&apos;s why every itinerary we create is tailored to your comfort, travel style and budget.</motion.p><motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .95 }} className="mt-8 flex flex-wrap justify-center gap-3"><button
+        <ContainerScroll titleComponent={<div className="px-4"><motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="eyebrow mb-5 text-orange">Gowaycations</motion.p><motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: .28, ease: [0.16, 1, .3, 1] }} className="mx-auto max-w-6xl text-[clamp(3.5rem,8vw,8.4rem)] font-medium leading-[.86] tracking-[-.085em]">Travel the way<br /><em className="font-light">you choose.</em></motion.h1><motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .75 }} className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-white/80 md:text-base">Every journey is different. That&apos;s why every itinerary we create is tailored to your comfort, travel style and budget.</motion.p><motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .95 }} className="mt-8 flex flex-wrap justify-center gap-3"><Button
   onClick={() =>
     window.open(
       "https://wa.me/919645039364?text=Hi%20Gowaycations,%20I%20would%20like%20to%20plan%20a%20trip.",
       "_blank"
     )
-  }>Plan my trip</Button><Button outline onClick={scrollTo("destinations")}>Explore destinations</Button></motion.div></div>}>
+  }
+>
+  Plan my trip
+</Button>
+
+<Button
+  outline
+  onClick={scrollTo("destinations")}
+>
+  Explore destinations
+</Button></motion.div></div>}>
           <div className="relative h-full overflow-hidden bg-black"><video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover"><source src="/media/goway-hero.mp4" type="video/mp4" /></video><div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-black/15" /><div className="relative flex h-full flex-col justify-between p-5 text-white md:p-8"><div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[.2em]"><span>Your journey begins here<span className="text-orange">•</span></span><span>01 / 01</span></div><div className="flex items-end justify-between"><div><p className="eyebrow text-orange">Explore the world</p><div className="mt-3 h-px w-40 bg-white/60" /></div><div className="hidden text-center md:block"><span className="mx-auto block h-10 w-6 rounded-full border border-white/70 p-1"><i className="block h-2 w-1 rounded-full bg-white" /></span><p className="mt-3 text-[9px] font-semibold uppercase tracking-[.2em] text-white/70">Scroll to discover</p></div><span className="text-xl">⌁</span></div></div></div>
         </ContainerScroll>
       </motion.div>
@@ -86,7 +101,16 @@ const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
 
     <section className="bg-[#f4f2ec] py-28 md:py-36"><div className="section-shell"><Reveal><p className="eyebrow text-orange">From our travellers</p><h2 className="mt-5 text-5xl font-medium tracking-[-.07em] md:text-7xl">The feeling stays with you.</h2></Reveal><div className="mt-14 grid gap-5 lg:grid-cols-3"><Reveal><blockquote className="min-h-[330px] rounded-[32px] bg-white p-8 shadow-[0_20px_45px_rgba(17,17,17,.06)]"><span className="text-orange">★★★★★</span><p className="mt-8 text-2xl font-medium leading-snug tracking-[-.045em]">“They understood our pace before we did. It never felt planned; it simply felt like us.”</p><footer className="mt-10 text-xs font-bold">Ananya & Rohan <span className="font-normal text-black/45">· A honeymoon in Bali</span></footer></blockquote></Reveal><Reveal delay={.1}><blockquote className="min-h-[330px] rounded-[32px] bg-forest p-8 text-white shadow-[0_20px_45px_rgba(17,17,17,.1)]"><span className="text-orange">★★★★★</span><p className="mt-8 text-2xl font-medium leading-snug tracking-[-.045em]">“Every transfer, every stay, every small request was quietly taken care of.”</p><footer className="mt-10 text-xs font-bold">Amit Mehra <span className="font-normal text-white/55">· Family journey through Kerala</span></footer></blockquote></Reveal><Reveal delay={.2}><blockquote className="min-h-[330px] rounded-[32px] bg-orange p-8 text-ink shadow-[0_20px_45px_rgba(17,17,17,.08)]"><span className="text-forest">★★★★★</span><p className="mt-8 text-2xl font-medium leading-snug tracking-[-.045em]">“Not a package. A beautiful, effortless story we got to step inside.”</p><footer className="mt-10 text-xs font-bold">Neha Kapoor <span className="font-normal text-black/55">· Friends&apos; escape to Vietnam</span></footer></blockquote></Reveal></div></div></section>
 
-    <section id="contact" className="relative min-h-[620px] overflow-hidden bg-[#10140d] text-white"><video autoPlay muted loop playsInline preload="none" className="absolute inset-0 h-full w-full object-cover opacity-50"><source src="/media/goway-hero.mp4" type="video/mp4" /></video><div className="absolute inset-0 bg-gradient-to-r from-[#11170f]/95 via-[#11170f]/60 to-[#11170f]/30" /><div className="section-shell relative flex min-h-[620px] items-center py-24"><Reveal><p className="eyebrow text-orange">Your story starts here</p><h2 className="mt-6 max-w-4xl text-5xl font-medium leading-[.92] tracking-[-.075em] md:text-8xl">The world is waiting.<br /><em className="font-light">Where will your story begin?</em></h2><p className="mt-7 max-w-xl text-sm leading-7 text-white/70">Tell us your idea, your comfort level and the way you want to travel. We will take it from there.</p><div className="mt-9"><Button onClick={() => undefined}>Let&apos;s plan your journey</Button></div></Reveal></div></section>
+    <section id="contact" className="relative min-h-[620px] overflow-hidden bg-[#10140d] text-white"><video autoPlay muted loop playsInline preload="none" className="absolute inset-0 h-full w-full object-cover opacity-50"><source src="/media/goway-hero.mp4" type="video/mp4" /></video><div className="absolute inset-0 bg-gradient-to-r from-[#11170f]/95 via-[#11170f]/60 to-[#11170f]/30" /><div className="section-shell relative flex min-h-[620px] items-center py-24"><Reveal><p className="eyebrow text-orange">Your story starts here</p><h2 className="mt-6 max-w-4xl text-5xl font-medium leading-[.92] tracking-[-.075em] md:text-8xl">The world is waiting.<br /><em className="font-light">Where will your story begin?</em></h2><p className="mt-7 max-w-xl text-sm leading-7 text-white/70">Tell us your idea, your comfort level and the way you want to travel. We will take it from there.</p><div className="mt-9"><Button
+  onClick={() =>
+    window.open(
+      "https://wa.me/919645039364?text=Hi%20Gowaycations,%20I%20would%20like%20to%20plan%20a%20trip.",
+      "_blank"
+    )
+  }
+>
+  Let's plan your journey
+</Button></div></Reveal></div></section>
 
     <footer className="bg-forest px-[5vw] py-14 text-white"><div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.5fr_1fr_1fr]"><div><Logo /><p className="mt-5 max-w-sm text-xs leading-6 text-white/65">Personalised travel, planned with care from Bengaluru to the world.</p></div><div><p className="eyebrow text-orange">Explore</p><p className="mt-5 text-xs leading-7 text-white/65">Destinations<br />Travel styles<br />How we customise</p></div><div><p className="eyebrow text-orange">Find us</p><p className="mt-5 text-xs leading-7 text-white/65">25th B Main Road,<br />BDA Layout, HSR Layout,<br />Bengaluru · 560102<br /><br />Instagram · 9645039364 · info@gowaycations.com</p></div></div><div className="mx-auto mt-12 max-w-[1400px] border-t border-white/15 pt-5 text-[10px] tracking-wide text-white/45">© 2026 Gowaycations. Travel the way you choose.</div></footer>
   </main>;
