@@ -16,22 +16,28 @@ const destinationData = [
 const styles = [["✦", "Family", "Unhurried days made for being together."], ["♡", "Honeymoon", "A beginning only the two of you can write."], ["☼", "Friends", "The kind of escape that becomes a forever story."], ["⌁", "Adventure", "For the part of you that still says yes first."], ["◌", "Luxury", "Beautifully considered, quietly extraordinary."], ["⌘", "Corporate", "Thoughtful travel for teams that go far."]];
 const benefits = ["Customized itineraries", "Flexible budgets", "Comfort-first planning", "Local expertise", "Personal recommendations", "End-to-end support"];
 
-function Logo({ dark = false }: { dark?: boolean }) {
-  return <a href="#home" aria-label="Gowaycations home" className={`logo-crop relative block h-[43px] w-[190px] overflow-hidden rounded-full ${dark ? "bg-[#fffaf4]" : "bg-[#fffaf4]"}`}><img src="/media/gowaycations-logo.jpeg" alt="Gowaycations" className="absolute left-0 top-1/2 h-auto w-full -translate-y-1/2 scale-[2.65] object-cover" /></a>;
+function Logo() {
+  return (
+    <a href="#home" aria-label="Gowaycations home" className="flex items-center">
+      <img
+        src="/media/gowaycations-logo.jpeg"
+        alt="Gowaycations"
+        className="h-16 w-auto object-contain md:h-20"
+      />
+    </a>
+  );
 }
 function Button({ children, outline = false, onClick }: { children: React.ReactNode; outline?: boolean; onClick?: () => void }) { return <button onClick={onClick} className={`group rounded-full px-6 py-4 text-[10px] font-extrabold uppercase tracking-[.16em] transition duration-300 ${outline ? "border border-white/45 text-white hover:border-white hover:bg-white hover:text-forest" : "bg-orange text-ink hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(255,148,28,.32)]"}`}>{children} <span className="ml-2 inline-block transition group-hover:translate-x-1">↗</span></button>; }
 function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) { return <motion.div {...reveal} className={className} viewport={{ once: true, amount: .18 }} transition={{ duration: .8, delay, ease: [0.16, 1, .3, 1] }}>{children}</motion.div>; }
 
 export default function Home() {
-  const { scrollY } = useScroll(); const heroTextY = useTransform(scrollY, [0, 700], [0, 135]); const [hasScrolled, setHasScrolled] = useState(false);
-  useEffect(() => scrollY.on("change", value => setHasScrolled(value > 36)), [scrollY]);
+ const { scrollY } = useScroll();
+const heroTextY = useTransform(scrollY, [0, 700], [0, 135]);
   const scrollTo = (target: string) => () => document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
   const nav = [["Home", "home", "⌂"], ["Destinations", "destinations", "◈"], ["Travel Styles", "styles", "✦"], ["About", "about", "○"], ["Contact", "contact", "↗"]].map(([label, id, icon]) => ({ id, label, onClick: scrollTo(id), icon: <span>{icon}</span> }));
   return <main className="overflow-hidden">
-    <header className={`fixed inset-x-0 top-0 z-50 mx-auto flex max-w-[1500px] items-center justify-between px-4 pt-4 transition duration-500 md:px-10 md:pt-5 ${hasScrolled ? "" : ""}`}>
-      <div className={`flex w-full items-center justify-between rounded-full border px-4 py-2.5 backdrop-blur-2xl transition duration-500 md:px-6 ${hasScrolled ? "border-black/10 bg-white/90 shadow-[0_12px_35px_rgba(0,0,0,.08)]" : "border-white/20 bg-black/20 shadow-[0_10px_35px_rgba(0,0,0,.18)]"}`}>
-        <Logo />
-        <LimelightNav items={nav} className="hidden xl:inline-flex" />
+<header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-[1500px] items-center justify-between px-4 pt-4 md:px-10 md:pt-5">
+<div className="flex w-full items-center justify-between rounded-full border border-white/20 bg-black/20 px-4 py-2.5 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,.18)] md:px-6">        <LimelightNav items={nav} className="hidden lg:inline-flex" />
         <button onClick={scrollTo("contact")} className="rounded-full bg-orange px-5 py-3 text-[10px] font-extrabold uppercase tracking-[.15em] text-ink shadow-[0_8px_24px_rgba(255,148,28,.25)] transition hover:scale-105">◉&nbsp; WhatsApp us</button>
       </div>
     </header>
